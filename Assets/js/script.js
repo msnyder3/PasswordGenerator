@@ -9,11 +9,21 @@ var SpecCharacters = ["!","#","$","%","&","*","+","-","?","@","\"","'","(",")","
 
 function getPasswordOptions() {
 
-  // Variable to store length of password from user input
+  // Variable to store length selected for generated password.
   var length = parseInt(
     prompt('How many characters would you like your password to contain?'),
-    10
   );
+  
+  //Conditional statements to make sure password input is between 8 and 128, and is a number.
+   if (passwordLength < 8 || passwordLength > 128) {
+       alert ("Password must be between 8 to 128 characters.")
+       return;
+    }
+
+    if (Number.isNaN(passwordLength)) {
+        alert ('Password length must be provided as a number');
+       return;
+   }
 
   
 
