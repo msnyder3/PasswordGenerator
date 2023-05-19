@@ -100,7 +100,16 @@ function generatePassword() {
   console.log(options.passwordLength);
   console.log(result);
   
+  for (var i = 0; i < options.passwordLength; i++) {
+    var possibleCharacter = getRandom(possibleCharacters);
+    result.push(possibleCharacter);
+  }
+  console.log(options.passwordLength);
+  console.log(result);
 
+   for (var i = 0; i < guaranteedCharacters.length; i++) {
+     result[i] = guaranteedCharacters[i];
+   }
 
     // Transform the result into a string and pass into writePassword
     return result.join('');
