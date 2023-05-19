@@ -111,18 +111,14 @@ function generatePassword() {
      result[i] = guaranteedCharacters[i];
    }
 
-    // Transform the result into a string and pass into writePassword
     return result.join('');
 }
 
-// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
+  return;
 }
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
