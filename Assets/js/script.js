@@ -43,6 +43,11 @@ var usesUppercase = confirm(
 var usesLowercase = confirm(
   "Would you like your password to contain Lowercase letters?"
 );
+var allCharacters = (usesNumbers, usesLowercase, usesSpecCharacters, usesUppercase)
+if (allCharacters === false){
+alert ('Must select minimum 1 character type for password.');
+return;
+}
 
 // Stores properties of user inputs
 var passwordOptions = {
