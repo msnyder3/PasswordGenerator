@@ -14,7 +14,7 @@ N/A
 The website contains a generation box which provides prompts so users can select the types of characters included in the generated password.
 
 ## Credits
-N/A
+Starter code provided by the generous souls at edX!
 
 ## License
 Please refer to the LICENSE in the repo.
