@@ -5,12 +5,10 @@ var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"
 var numbers = ["0","1","2","3","4","5","6","7","8","9"];
 var SpecCharacters = ["!","#","$","%","&","*","+","-","?","@","\"","'","(",")",",",".","/",":",";","<","=",">","[","\\","]","^","_","`","{","}","~","|"];
 
-
-
 function getPasswordOptions() {
 
   // Variable to store length selected for generated password.
-  var length = parseInt(
+  var passwordLength = parseInt(
     prompt('How many characters would you like your password to contain?'),
   );
   
@@ -23,7 +21,7 @@ function getPasswordOptions() {
     if (Number.isNaN(passwordLength)) {
         alert ('Password length must be provided as a number');
        return;
-   }
+    }
 
 //Variable to store boolean of whether we are using numbers
 var usesNumbers = confirm(
@@ -57,7 +55,8 @@ var passwordOptions = {
   usesUppercase: usesUppercase,
   usesLowercase: usesLowercase,
  }
-return passwordOptions;}
+return passwordOptions;
+}
 
 
 
