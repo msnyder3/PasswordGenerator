@@ -65,29 +65,40 @@ function getRandom(arr) {
   return randElement;
 }
 
-// Function to generate password with user input
 function generatePassword() {
 
   var options = getPasswordOptions();
-  // Variable to store password as it's being concatenated
+
   var result = [];
 
-  // Array to store types of characters to include in password
   var possibleCharacters = [];
 
-  // Array to contain one of each type of chosen character to ensure each will be used
   var guaranteedCharacters = [];
 
-  // Check if an options object exists, if not exit the function
   if (!options) return null;
 
-   // Conditional statement that adds array of special characters into array of possible characters based on user input
-  // Push new random special character to guaranteedCharacters
-  if (options.hasSpecialCharacters) {
-    possibleCharacters = possibleCharacters.concat(specialCharacters);
-    guaranteedCharacters.push(getRandom(specialCharacters));
+  if (options.usesSpecCharacters) {
+    possibleCharacters = possibleCharacters.concat(SpecCharacters);
+    guaranteedCharacters.push(getRandom(SpecCharacters));
   }
-
+  if (options.usesNumbers) {
+    possibleCharacters = possibleCharacters.concat(numbers);
+    guaranteedCharacters.push(getRandom(numbers));
+  }
+  if (options.usesUppercase) {
+    possibleCharacters = possibleCharacters.concat(upperCase);
+    guaranteedCharacters.push(getRandom(upperCase));
+  }
+  if (options.usesLowercase) {
+    possibleCharacters = possibleCharacters.concat(lowerCase);
+    guaranteedCharacters.push(getRandom(lowerCase));
+  }
+  for (var i = 0; i < options.passwordLength; i++) {
+    var possibleCharacter = getRandom(possibleCharacters);
+    result.push(possibleCharacter);
+  }
+  console.log(options.passwordLength);
+  console.log(result);
   
 
 
