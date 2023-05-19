@@ -25,28 +25,35 @@ function getPasswordOptions() {
        return;
    }
 
+//Variable to store boolean of whether we are using numbers
+var usesNumbers = confirm(
+  "Would you like your password to contain numbers?"
+);
+
+//Variable to store boolean of whether we are using special characters
+var usesSpecCharacters = confirm(
+  "Would you like your password to contain special characters?"
+);    
   
+//Variable to store whether we are using UpperCase letters
+var usesUppercase = confirm(
+  "Would you like your password to contain Uppercase letters?"
+);
+//Variable to stroe whether we are using LowerCase letters
+var usesLowercase = confirm(
+  "Would you like your password to contain Lowercase letters?"
+);
 
+// Stores properties of user inputs
+var passwordOptions = {
+  passwordLength: passwordLength,
+  usesNumbers: usesNumbers,
+  usesSpecCharacters: usesSpecCharacters,
+  usesUppercase: usesUppercase,
+  usesLowercase: usesLowercase,
+ }
+return passwordOptions;}
 
-  // Conditional statement to check if password length is a number. Prompts end if this evaluates false
-  if (Number.isNaN(length)) {
-    alert('Password length must be provided as a number');
-    return null;
-  }
-
-  // Variable to store boolean regarding the inclusion of special characters
-  var hasSpecialCharacters = confirm(
-    'Click OK to confirm including special characters.'
-  );
-
-   // Object to store user input
-   var passwordOptions = {
-    length: length,
-    // add more properties and values here
-   }
-
-   return passwordOptions;
-}
 
 
 
